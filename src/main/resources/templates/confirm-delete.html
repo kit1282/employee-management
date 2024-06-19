@@ -1,0 +1,43 @@
+<html>
+ <div th:insert="navbar"></div>
+ <body onload="makeActive('delete')">
+ <form action="delete-employee-record">
+  <input type="hidden" th:value="${employee.eid}" name="eid">	 
+  <table class='tar' border='1'>
+	<tr style='background-color:orange;color:white;font-size:2vw'>
+	 <th colspan="2" style="text-align:center">Employee Details</th>
+	</tr>  
+	<tr>
+	 <th align="left">Employee Id</th>
+	 <td th:text="${employee.eid}"></td>
+	</tr>
+	<tr>
+	 <th align="left">Employee first name</th>
+	 <td th:text="${employee.firstname}"></td>
+	</tr>
+	<tr>
+	 <th align="left">Employee last name</th>
+	 <td th:text="${employee.lastname}"></td>
+	</tr>
+	<tr>
+	 <th align="left">Employee phone number</th>
+	 <td th:text="${employee.phone}"></td>
+	</tr>
+	<tr>
+	 <th align="left">Employee department</th>
+	 <td th:text="${employee.department}"></td>
+	</tr>
+	<tr>
+	 <th align="left">Employee salary</th>
+	 <td th:text="${employee.salary}"></td>
+	</tr>
+	<tr>
+	 <td colspan="2" align="right">
+	  <button class='btn btn-danger'>Confirm Delete</button>
+	  <input type='button' class='btn btn-secondary' value='Cancel' onclick='history.back()'>
+	 </td>
+	</tr>
+  </table>
+  </form>
+ </body>
+</html>

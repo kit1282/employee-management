@@ -1,0 +1,49 @@
+<html>
+ <style>
+	 input[type="text"]
+	 {
+		 width:100%;
+	 }
+ </style> 	 
+ <div th:insert="navbar"></div>
+ <body onload="makeActive('edit')">
+ <form action="update-record" method="post">
+  <input type="hidden" th:value="${employee.eid}" name="eid">	 
+  <table class='tar' border='1'>
+	<tr style='background-color:orange;color:white;font-size:2vw'>
+	 <th colspan="2" style="text-align:center">Employee Details</th>
+	</tr>  
+	<tr>
+	 <th align="left">Employee Id</th>
+	 <td th:text="${employee.eid}"></td>
+	</tr>
+	<tr>
+	 <th align="left">Employee first name</th>
+	 <td><input type="text" th:value="${employee.firstname}" name="firstname"></td>
+	</tr>
+	<tr>
+	 <th align="left">Edit employee last name</th>
+	 <td><input type="text" th:value="${employee.lastname}" name="lastname"></td>
+	</tr>
+	<tr>
+	 <th align="left">Edit employee phone number</th>
+	 <td><input type="text" th:value="${employee.phone}" name="phone"></td>
+	</tr>
+	<tr>
+	 <th align="left">Edit employee department</th>
+	 <td><input type="text" th:value="${employee.department}" name="department"></td>
+	</tr>
+	<tr>
+	 <th align="left">Employee salary</th>
+	 <td><input type="text" th:value="${employee.salary}" name="salary"></td>
+	</tr>
+	<tr>
+	 <td colspan="2" align="right">
+	  <button class='btn btn-primary'>Update Record</button>
+	  <input type='button' class='btn btn-secondary' value='Cancel' onclick='history.back()'>
+	 </td>
+	</tr>
+  </table>
+  </form>
+ </body>
+</html>
